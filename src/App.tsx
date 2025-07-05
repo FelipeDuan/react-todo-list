@@ -1,3 +1,3 @@
 export function App() {
-  return <>Olá mundo</>;
+  return <div className="text-3xl">Olá mundo</div>;
 }
