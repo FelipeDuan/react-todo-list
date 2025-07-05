@@ -6,6 +6,7 @@ import PencilIcon from "./assets/icons/pencil.svg?react";
 import SpinnerIcon from "./assets/icons/spinner.svg?react";
 import XIcon from "./assets/icons/x.svg?react";
 import { Icon } from "./components/icon";
+import { Badge } from "./components/badge";
 
 export function App() {
   return (
@@ -26,6 +27,11 @@ export function App() {
         <Icon svg={SpinnerIcon} animate />
         <Icon svg={PencilIcon} className="fill-green-base" />
         <Icon svg={XIcon} className="fill-green-base" />
+      </div>
+
+      <div>
+        <Badge variant="secondary">5</Badge>
+        <Badge variant="primary">2 de 5</Badge>
       </div>
     </div>
   );
