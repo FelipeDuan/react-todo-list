@@ -1,3 +1,3 @@
 export function App() {
-  return <div className="text-3xl">Olá mundo</div>;
+  return <div className="text-pink-dark">Olá mundo</div>;
 }
