@@ -8,9 +8,13 @@ export const textVariants = cva("font-sans text-gray-400", {
       "body-md": "text-base leading-6 font-normal",
       "body-md-bold": "text-base leading-6 font-semibold",
     },
+    muted: {
+      true: "!text-gray-300",
+    },
   },
   defaultVariants: {
     variant: "body-md",
+    muted: false,
   },
 });
 
@@ -23,6 +27,7 @@ interface TextProps extends VariantProps<typeof textVariants> {
 export function Text({
   as = "span",
   variant,
+  muted,
   className,
   children,
   ...props
@@ -30,7 +35,7 @@ export function Text({
   return React.createElement(
     as,
     {
-      className: textVariants({ variant, className }),
+      className: textVariants({ variant, muted, className }),
       ...props,
     },
     children
