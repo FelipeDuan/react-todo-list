@@ -19,13 +19,17 @@ interface TaskItemProps {
 export function TaskItem({ task }: TaskItemProps) {
   const [isEditing, setIsEditing] = useState(task?.state === "creating");
   const [taskTitle, setTaskTitle] = useState(task.title || "");
-  const { updateTask, updateTaskStatus } = useTask();
+  const { updateTask, updateTaskStatus, deleteTask } = useTask();
 
   function handleEnableEditingTask() {
     setIsEditing(true);
   }
 
   function handleDisabledEditingTask() {
+    if (task.state === "creating") {
+      deleteTask(task.id);
+    }
+
     setIsEditing(false);
   }
 
@@ -46,6 +50,10 @@ export function TaskItem({ task }: TaskItemProps) {
     updateTaskStatus(task.id, checked);
   }
 
+  function handleDeleteTask() {
+    deleteTask(task.id);
+  }
+
   return (
     <Card size="md">
       {!isEditing ? (
@@ -60,7 +68,12 @@ export function TaskItem({ task }: TaskItemProps) {
           </Text>
 
           <div className="flex items-center justify-center gap-1">
-            <ButtonIcon type="button" icon={TrashIcon} variant="tertiary" />
+            <ButtonIcon
+              type="button"
+              icon={TrashIcon}
+              variant="tertiary"
+              onClick={handleDeleteTask}
+            />
             <ButtonIcon
               type="button"
               icon={PencilIcon}
