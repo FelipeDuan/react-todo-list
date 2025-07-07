@@ -48,7 +48,10 @@ O principal objetivo deste projeto foi **reforçar os conceitos fundamentais do 
 ---
 
 ## ▶️ Como executar
+### Online:
+- Através da seguinte url: [ToDo-List](https://react-todo-list-steel-seven.vercel.app/)
 
+### Localmente:
 ```bash
 # Instale as dependências
 pnpm install
