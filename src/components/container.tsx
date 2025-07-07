@@ -26,7 +26,7 @@ export function Container({
 }: ContainerProps) {
   return React.createElement(
     as,
-    { className: containerVariants({ size: "md", className }) },
+    { className: containerVariants({ size: "md", className }), ...props },
     children
   );
 }
