@@ -11,11 +11,11 @@ export function Footer() {
           </Text>
         </NavLink>
 
-        <NavLink to="/componentes">
+        {/* <NavLink to="/componentes">
           <Text variant="body-sm-bold" className="text-gray-300">
             Componentes
           </Text>
-        </NavLink>
+        </NavLink> */}
       </nav>
     </footer>
   );
